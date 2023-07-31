@@ -8,11 +8,20 @@
         email: "princessofpop@gmail.com",
         password: "Toxic"
     )
-=end
+    FarmerProduct.create(
+        name: "Bag Of Fertilizer",
+        price: 2500,
+        image: "https://tinyurl.com/2jee46ce",
+        description: "A lovely bag of fertilizer to help pep up the step of your farm!"
+    )
 
-FarmerProduct.create(
-    name: "Bag Of Fertilizer",
-    price: 2500,
-    image: "https://tinyurl.com/2jee46ce",
-    description: "A lovely bag of fertilizer to help pep up the step of your farm!"
-)
+    #There's a small issue with this one but you can still seed it anyway
+        FarmerProductSale.create(
+            user_id: 1,
+            farmer_product_id: 1,
+            quantity: 12
+        )
+        total_sale = FarmerProductSale.calculate_sale_total
+        puts "Total Sale Value: #{total_sale}"
+
+=end
