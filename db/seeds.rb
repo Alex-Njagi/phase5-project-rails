@@ -36,7 +36,6 @@
         training_date: Date.current,
         number_of_trainees: 2
     )
-=end
 
     FarmingLand.create(
         user_id: 1,
@@ -44,4 +43,15 @@
         description: "A lovely piece of land located on the outskirts of Rosewood, PA",
         size_in_acres: 800
     )
+    LandOperation.destroy_all
+    LandOperation.create(
+        user_id: 2,
+        farming_land_id: 1,
+        type_of_operation: "rent",
+        operation_duration: 2,
+        cost_of_operation: 1200.05
+    )
+    
+=end
+    
     
