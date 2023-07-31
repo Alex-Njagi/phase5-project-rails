@@ -30,4 +30,11 @@
             produce_unit_price: 450.50,
             produce_quantity: 12
     )
+    
+    FarmerTraining.create(
+        user_id: 1,
+        training_date: Date.current,
+        number_of_trainees: 2
+    )
 =end
+    

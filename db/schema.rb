@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_31_112218) do
+ActiveRecord::Schema.define(version: 2023_07_31_113740) do
 
   create_table "farmer_produce_sales", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(version: 2023_07_31_112218) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "farmer_trainings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "user_name"
+    t.date "training_date"
+    t.decimal "registration_fee"
+    t.integer "number_of_trainees"
+    t.string "total_training_cost"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_farmer_trainings_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "status"
@@ -60,4 +72,5 @@ ActiveRecord::Schema.define(version: 2023_07_31_112218) do
   add_foreign_key "farmer_produce_sales", "users"
   add_foreign_key "farmer_product_sales", "farmer_products"
   add_foreign_key "farmer_product_sales", "users"
+  add_foreign_key "farmer_trainings", "users"
 end
