@@ -1,0 +1,3 @@
+class FarmerProduct < ApplicationRecord
+    
+end
