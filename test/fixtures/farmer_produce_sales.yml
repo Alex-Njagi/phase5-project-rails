@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  produce_name: MyString
+  produce_unit_price: 9.99
+  produce_quantity: 1
+  total_produce_sale: 9.99
+
+two:
+  user: two
+  produce_name: MyString
+  produce_unit_price: 9.99
+  produce_quantity: 1
+  total_produce_sale: 9.99

@@ -24,4 +24,10 @@
         total_sale = FarmerProductSale.calculate_sale_total
         puts "Total Sale Value: #{total_sale}"
 
+    FarmerProduceSale.create(
+            user_id: 1,
+            produce_name: "Honey",
+            produce_unit_price: 450.50,
+            produce_quantity: 12
+    )
 =end
