@@ -53,5 +53,20 @@
     )
     
 =end
-    
-    
+FarmerProductSale.destroy_all
+puts "seeding FarmerProductSale"
+FarmerProductSale.create(
+    user_id: 1,
+    farmer_product_id: 1,
+    quantity: 12
+)
+puts "done seeding FarmerProductSale"
+FarmerProduceSale.destroy_all
+puts "seeding FarmerProduceSale"
+FarmerProduceSale.create(
+    user_id: 1,
+    produce_name: "Honey",
+    produce_unit_price: 450.50,
+    produce_quantity: 12
+)
+puts "done seeding FarmerProductSale"
