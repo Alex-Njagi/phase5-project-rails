@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
     has_many :farmer_trainings
 
+    has_many :farming_lands
+
     validates :name, :status, :email, presence: true
     validates :phone_number, length: { maximum: 10 }
     validates :status, inclusion: { in: ['Farming Group Administrator', 'Public Client'] }

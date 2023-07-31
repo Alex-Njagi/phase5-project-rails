@@ -37,4 +37,11 @@
         number_of_trainees: 2
     )
 =end
+
+    FarmingLand.create(
+        user_id: 1,
+        image: "https://tinyurl.com/y5kz8d4z",
+        description: "A lovely piece of land located on the outskirts of Rosewood, PA",
+        size_in_acres: 800
+    )
     
