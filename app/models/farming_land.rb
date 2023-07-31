@@ -1,6 +1,6 @@
 class FarmingLand < ApplicationRecord
   belongs_to :user
-  has_many :land_operations
+  has_many :land_operations, dependent: :destroy
 
   before_save :get_user
 
