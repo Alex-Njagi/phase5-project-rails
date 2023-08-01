@@ -26,5 +26,10 @@ class FarmerTrainingsController < ApplicationController
     end
   end
 
-  
+  # DELETE /farmer_trainings/:id
+  def destroy
+    @farmer_training.destroy
+    head :no_content
+  end
+
 end
