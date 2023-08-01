@@ -2,15 +2,15 @@ class FarmerProduceSalesController < ApplicationController
     before_action :set_produce_sale, only: [:show, :update, :destroy]
 
     # GET /farmer_produce_sales
-  def index
-    @farmer_produce_sales = FarmerProduceSale.all
-    render json: @farmer_produce_sales
-  end
+  # def index
+  #   @farmer_produce_sales = FarmerProduceSale.all
+  #   render json: @farmer_produce_sales
+  # end
 
-  # GET /farmer_produce_sales/:id
-  def show
-    render json: @produce_sale
-  end
+  # # GET /farmer_produce_sales/:id
+  # def show
+  #   render json: @produce_sale
+  # end
 
   # POST /farmer_produce_sales
   def create
@@ -24,19 +24,19 @@ class FarmerProduceSalesController < ApplicationController
   end
 
   # PATCH/PUT /farmer_produce_sales/:id
-  def update
-    if @produce_sale.update(produce_sale_params)
-      render json: @produce_sale
-    else
-      render json: { errors: @produce_sale.errors.full_messages }, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @produce_sale.update(produce_sale_params)
+  #     render json: @produce_sale
+  #   else
+  #     render json: { errors: @produce_sale.errors.full_messages }, status: :unprocessable_entity
+  #   end
+  # end
 
-  # DELETE /farmer_produce_sales/:id
-  def destroy
-    @produce_sale.destroy
-    head :no_content
-  end
+  # # DELETE /farmer_produce_sales/:id
+  # def destroy
+  #   @produce_sale.destroy
+  #   head :no_content
+  # end
 
   private
 
