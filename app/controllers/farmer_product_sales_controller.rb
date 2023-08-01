@@ -31,4 +31,16 @@ class FarmerProductSalesController < ApplicationController
     @product_sale.destroy
     head :no_content
   end
+
+  private
+
+  def set_product_sale
+    @product_sale = FarmerProductSale.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: 'Farmer product sale not found' }, status: :not_found
+  end
+
+  def product_sale_params
+    params.require(:farmer_product_sale).permit(:quantity, :user_id, :farmer_product_id)
+  end
 end
