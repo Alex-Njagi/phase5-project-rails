@@ -7,10 +7,10 @@ class FarmingLandsController < ApplicationController
     render json: @farming_lands
   end
 
-#   # GET /farmer_trainings/:id
-#   def show
-#     render json: @farming_lands
-#   end
+#   # GET /farming_lands/:id
+  def show
+    render json: @farming_land
+  end
 
   # POST /farming_lands
   def create
@@ -47,6 +47,6 @@ class FarmingLandsController < ApplicationController
   end
 
   def farming_land_params
-    params.require(:farming_land).permit(:size_in_acres, :description, :status, :user_id)
+    params.require(:farming_land).permit(:size_in_acres, :description, :image, :user_id)
   end
 end
