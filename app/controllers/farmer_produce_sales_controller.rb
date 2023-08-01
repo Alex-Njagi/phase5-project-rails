@@ -16,4 +16,13 @@ class FarmerProduceSalesController < ApplicationController
       render json: { errors: @produce_sale.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  # PATCH/PUT /farmer_produce_sales/:id
+  def update
+    if @produce_sale.update(produce_sale_params)
+      render json: @produce_sale
+    else
+      render json: { errors: @produce_sale.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
 end
