@@ -2,41 +2,41 @@ class FarmerProductSalesController < ApplicationController
     before_action :set_product_sale, only: [:show, :update, :destroy]
 
     # GET /farmer_product_sales
-  def index
-    @farmer_product_sales = FarmerProductSale.all
-    render json: @farmer_product_sales
-  end
+  # def index
+  #   @farmer_product_sales = FarmerProductSale.all
+  #   render json: @farmer_product_sales, except: [:sale_total]
+  # end
   
-  # GET /farmer_product_sales/:id
-  def show
-    render json: @product_sale
-  end
+  # # GET /farmer_product_sales/:id
+  # def show
+  #   render json: @product_sale, except: [:sale_total]
+  # end
 
   # POST /farmer_product_sales
   def create
     @product_sale = FarmerProductSale.new(product_sale_params)
 
     if @product_sale.save
-      render json: @product_sale, status: :created
+      render json: @product_sale, except: [:sale_total], status: :created
     else
       render json: { errors: @product_sale.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /farmer_product_sales/:id
-  def update
-    if @product_sale.update(product_sale_params)
-      render json: @product_sale
-    else
-      render json: { errors: @product_sale.errors.full_messages }, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @product_sale.update(product_sale_params)
+  #     render json: @product_sale
+  #   else
+  #     render json: { errors: @product_sale.errors.full_messages }, status: :unprocessable_entity
+  #   end
+  # end
 
-   # DELETE /farmer_product_sales/:id
-  def destroy
-    @product_sale.destroy
-    head :no_content
-  end
+  #  # DELETE /farmer_product_sales/:id
+  # def destroy
+  #   @product_sale.destroy
+  #   head :no_content
+  # end
 
   private
 
