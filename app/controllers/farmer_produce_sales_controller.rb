@@ -1,6 +1,12 @@
 class FarmerProduceSalesController < ApplicationController
     before_action :set_produce_sale, only: [:show, :update, :destroy]
 
+    # GET /farmer_produce_sales
+  def index
+    @farmer_produce_sales = FarmerProduceSale.all
+    render json: @farmer_produce_sales
+  end
+
   # GET /farmer_produce_sales/:id
   def show
     render json: @produce_sale
