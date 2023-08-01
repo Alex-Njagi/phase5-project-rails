@@ -4,12 +4,12 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-    render json: @users
+    render json: @users, except: [:password_digest]
   end
   
   # GET /users/:id
   def show
-    render json: @user
+    render json: @user, except: [:password_digest]
   end
 
   # POST /users
@@ -47,6 +47,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :status, :email, :phone_number, :group_number, :password)
+    params.require(:user).permit(:name, :status, :email, :phone_number, :group_number, :location, :password, :password_confirmation)
   end
 end
