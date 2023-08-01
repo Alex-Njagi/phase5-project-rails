@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :farmer_trainings, only: [:show, :create, :update, :destroy]
 
-  
+  resources :farming_lands, only: [:show, :create, :update, :destroy]
+
 
 end
