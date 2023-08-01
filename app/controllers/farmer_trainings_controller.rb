@@ -6,5 +6,14 @@ class FarmerTrainingsController < ApplicationController
     render json: @farmer_training
   end
 
-  
+  # POST /farmer_trainings
+  def create
+    @farmer_training = FarmerTraining.new(farmer_training_params)
+
+    if @farmer_training.save
+      render json: @farmer_training, status: :created
+    else
+      render json: { errors: @farmer_training.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
 end
