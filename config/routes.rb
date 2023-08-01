@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   resources :farmer_produce_sales, only: [:show, :create, :update, :destroy]
 
+  resources :farmer_trainings, only: [:show, :create, :update, :destroy]
+
+  
 
 end
