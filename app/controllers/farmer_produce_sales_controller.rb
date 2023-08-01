@@ -25,4 +25,10 @@ class FarmerProduceSalesController < ApplicationController
       render json: { errors: @produce_sale.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  # DELETE /farmer_produce_sales/:id
+  def destroy
+    @produce_sale.destroy
+    head :no_content
+  end
 end
