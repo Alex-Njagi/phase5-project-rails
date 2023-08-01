@@ -1,0 +1,2 @@
+class LandOperationsController < ApplicationController
+end
