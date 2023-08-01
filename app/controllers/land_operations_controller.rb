@@ -2,15 +2,15 @@ class LandOperationsController < ApplicationController
   before_action :set_land_operation, only: [:show, :update, :destroy]
 
   # GET /land_operations
-  def index
-    @land_operations = LandOperation.all
-    render json: @land_operations
-  end
+  # def index
+  #   @land_operations = LandOperation.all
+  #   render json: @land_operations
+  # end
   
-  # GET /land_operations/:id
-  def show
-    render json: @land_operation
-  end
+  # # GET /land_operations/:id
+  # def show
+  #   render json: @land_operation
+  # end
 
   # POST /land_operations
   def create
