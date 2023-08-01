@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
   resources :land_operations, only: [:show, :create, :update, :destroy]
 
+
 end
