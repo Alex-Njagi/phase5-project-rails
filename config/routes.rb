@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resources :farmer_product_sales, only: [:show, :create, :update, :destroy]
 
+  resources :farmer_produce_sales, only: [:show, :create, :update, :destroy]
+
 
 end
