@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :create, :update, :destroy]
 
-  resources :farmer_products, only: [:index, :show, :create, :update, :destroy]
+  resources :farmer_products, only: [:index, :show]
 
   resources :farmer_product_sales, only: [:index, :show, :create, :update, :destroy]
 
