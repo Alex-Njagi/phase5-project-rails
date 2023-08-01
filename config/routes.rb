@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :farmer_produce_sales, only: [:create]
 
-  resources :farmer_trainings, only: [:index, :show, :create, :update, :destroy]
+  resources :farmer_trainings, only: [:create]
 
   resources :farming_lands, only: [:index, :show, :create, :update, :destroy]
 
