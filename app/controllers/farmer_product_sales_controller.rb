@@ -1,0 +1,2 @@
+class FarmerProductSalesController < ApplicationController
+end
