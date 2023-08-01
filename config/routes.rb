@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   resources :farming_lands, only: [:show, :create, :update, :destroy]
 
+  resources :land_operations, only: [:show, :create, :update, :destroy]
 
 end
