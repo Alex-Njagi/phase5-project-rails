@@ -32,4 +32,16 @@ class FarmerTrainingsController < ApplicationController
     head :no_content
   end
 
+  private
+
+  def set_farmer_training
+    @farmer_training = FarmerTraining.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: 'Farmer training not found' }, status: :not_found
+  end
+
+  def farmer_training_params
+    params.require(:farmer_training).permit(:number_of_trainees, :training_date, :user_id)
+  end
+
 end
