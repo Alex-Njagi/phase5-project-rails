@@ -7,6 +7,11 @@ class FarmingLandsController < ApplicationController
     render json: @farming_lands
   end
 
+#   # GET /farmer_trainings/:id
+#   def show
+#     render json: @farming_lands
+#   end
+
   # POST /farming_lands
   def create
     @farming_land = FarmingLand.new(farming_land_params)
