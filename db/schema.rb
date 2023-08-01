@@ -14,27 +14,27 @@ ActiveRecord::Schema.define(version: 2023_07_31_144659) do
 
   create_table "farmer_produce_sales", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "user_name"
     t.string "produce_name"
     t.decimal "produce_unit_price"
     t.integer "produce_quantity"
     t.decimal "total_produce_sale"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "user_name"
     t.index ["user_id"], name: "index_farmer_produce_sales_on_user_id"
   end
 
   create_table "farmer_product_sales", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "user_name"
     t.integer "farmer_product_id", null: false
-    t.string "product_name"
     t.integer "quantity"
     t.integer "unit_price"
     t.integer "total_product_price"
     t.integer "sale_total"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "user_name"
+    t.string "product_name"
     t.index ["farmer_product_id"], name: "index_farmer_product_sales_on_farmer_product_id"
     t.index ["user_id"], name: "index_farmer_product_sales_on_user_id"
   end
