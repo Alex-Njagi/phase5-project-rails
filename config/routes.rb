@@ -15,5 +15,8 @@ Rails.application.routes.draw do
 
   resources :land_operations, only: [:create, :update, :destroy]
 
+  post '/login', to: 'auth#create'
+  get '/profile', to: 'users#profile'
+
 
 end
