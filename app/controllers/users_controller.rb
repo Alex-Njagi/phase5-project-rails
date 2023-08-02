@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:create, :update_password]
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /profile
@@ -43,6 +43,16 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     head :no_content
+  end
+
+  def update_password
+    @user = User.find(params[:id])
+
+    if @user.update(password: params[:password], password_confirmation: params[:password_confirmation])
+      render json: @user
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private
