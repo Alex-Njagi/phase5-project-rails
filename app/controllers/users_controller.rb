@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   skip_before_action :authorized, only: [:create]
   before_action :set_user, only: [:show, :update, :destroy]
 
+  # GET /profile
+  def profile
+    render json: { user: current_user.attributes, jwt: @token }, status: :accepted
+  end  
+
   # GET /users
   def index
     @users = User.all
