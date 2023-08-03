@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  wrap_parameters :user, include: [:name, :status, :email, :phone_number, :group_number, :location, :password, :password_confirmation]
   skip_before_action :authorized, only: [:create, :update_password]
   before_action :set_user, only: [:show, :update, :destroy]
 
@@ -61,6 +62,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     render json: { error: 'User not found' }, status: :not_found
+  end
+
+  def update_user_params
+    params.require(:user).permit(:name, :status, :email, :phone_number, :group_number, :location)
   end
 
   def user_params
