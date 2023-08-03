@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create]
+  wrap_parameters :user, include: [:name, :status, :email, :phone_number, :group_number, :location, :password, :password_confirmation]
+  skip_before_action :authorized, only: [:create, :update_password]
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /profile
@@ -45,12 +46,26 @@ class UsersController < ApplicationController
     head :no_content
   end
 
+  def update_password
+    @user = User.find(params[:id])
+
+    if @user.update(password: params[:password], password_confirmation: params[:password_confirmation])
+      render json: @user
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_user
     @user = User.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     render json: { error: 'User not found' }, status: :not_found
+  end
+
+  def update_user_params
+    params.require(:user).permit(:name, :status, :email, :phone_number, :group_number, :location)
   end
 
   def user_params
