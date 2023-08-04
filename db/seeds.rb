@@ -1,4 +1,4 @@
-#Creates seed data for 5 different users
+#Creates seed data for 7 different users
 puts "seeding Users... 🌱"
     User.create(
         name: "Alex Njagi",
@@ -45,10 +45,26 @@ puts "seeding Users... 🌱"
         email: "markchege@gmail.com",
         password: "Mark Chege"
     )
+    User.create(
+        name: "Marina and the Diamonds",
+        status: "Public Client",
+        location: "FROOT",
+        phone_number: "7676767676",
+        email: "marinadiamonds@gmail.com",
+        password: "Primadonna"
+    )
+    User.create(
+        name: "Claire Lynch",
+        status: "Public Client",
+        location: "Parklands",
+        phone_number: "5656565656",
+        email: "clairelynch@gmail.com",
+        password: "Claire Lynch"
+    )
 puts "Users seeded 🌱"
 
 
-#Creates seed data for 8 different products
+#Creates seed data for 8 different farmer products
 puts "seeding FarmerProducts... 🌱"
     FarmerProduct.create(
         name: "Bag Of Fertilizer",
@@ -77,7 +93,7 @@ puts "seeding FarmerProducts... 🌱"
     FarmerProduct.create(
         name: "Watering Can",
         price: 700,
-        image: "https://tinyurl.com/23hynj5v",
+        image: "https://tinyurl.com/344ahya7",
         description: "A handy dandy watering can to irrigate and water your lovely crops!"
     )
     FarmerProduct.create(
@@ -214,3 +230,97 @@ puts "seeding LandOperations... 🌱"
         cost_of_operation: 5000.75
     )
 puts "LandOperations seeded 🌱"
+
+#Creates seed data for 15 different farmer products
+puts "seeding PublicClientProducts... 🌱"
+    PublicClientProduct.create(
+        name: "Tomato Sauce",
+        price: 300,
+        image: "https://tinyurl.com/bdhuvp2p",
+        description: "A bloody red bottle of tomato sauce made from freshly harvested tomatoes!"
+    )
+    PublicClientProduct.create(
+        name: "Apple Jam",
+        price: 400,
+        image: "https://tinyurl.com/3npc8fwm",
+        description: "Give your bread the knockout taste it needs to become a knuckle sandwich!"
+    )
+    PublicClientProduct.create(
+        name: "Carrot Chips",
+        price: 250,
+        image: "https://tinyurl.com/bp5bmvua",
+        description: "What's up, doc? These chips are wonderfully made from our excellent carrots!"
+    )
+    PublicClientProduct.create(
+        name: "Strawberry Yoghurt",
+        price: 350,
+        image: "https://tinyurl.com/34nv5zs5",
+        description: "Give yourself a tasty taste of heaven with our amazing strawberry yoghurt!"
+    )
+    PublicClientProduct.create(
+        name: "Banana Bread",
+        price: 280,
+        image: "https://tinyurl.com/3kn2ajw7",
+        description: "We know you want it; Treat yourself with a most magnificent loaf today!"
+    )
+    PublicClientProduct.create(
+        name: "Sweet Potato Fries",
+        price: 220,
+        image: "https://tinyurl.com/2utpby7f",
+        description: "What's sweet about these fries is that they're made from fresh potatoes!"
+    )
+    PublicClientProduct.create(
+        name: "Spinach Pasta",
+        price: 280,
+        image: "https://tinyurl.com/mw2zkwj7",
+        description: "Try a new spin on pasta with our pack of spinach pasta today!"
+    )
+    PublicClientProduct.create(
+        name: "Mango Chutney",
+        price: 320,
+        image: "https://tinyurl.com/mr4xhpdv",
+        description: "You have to...no...you Chut-need to try a jar of our famous mango chutney!"
+    )
+    PublicClientProduct.create(
+        name: "Corn Salsa",
+        price: 200,
+        image: "https://tinyurl.com/5n7psryb",
+        description: "Ain't nothing corny about this salsa; Find out by sccoring yoursef a container today!"
+    )
+    PublicClientProduct.create(
+        name: "Pumpkin Soup",
+        price: 250,
+        image: "https://tinyurl.com/wvcp2d5a",
+        description: "A lovely bowl of our pumpkin soup has been scientifically proven to make Halloween more exciting!"
+    )
+    PublicClientProduct.create(
+        name: "Blueberry Muffins",
+        price: 150,
+        image: "https://tinyurl.com/5er9chr3",
+        description: "Who the heck put the muffins in the freezer? Not us cause our blueberry muffins are warm and soft to the senses!"
+    )
+    PublicClientProduct.create(
+        name: "Ginger Lemonade",
+        price: 150,
+        image: "https://tinyurl.com/ydsr889m",
+        description: "We're here to lemon-aid you quench your thirst with our bottles of refreshing ginger lemonade!"
+    )
+    PublicClientProduct.create(
+        name: "Mixed Berry Smoothie",
+        price: 300,
+        image: "https://tinyurl.com/y7mksm9t",
+        description: "Feeling fun and fruity? Get yourself a mixed berry smoothie today!"
+    )
+    PublicClientProduct.create(
+        name: "Cucumber Face Mask",
+        price: 90,
+        image: "https://tinyurl.com/5a8enmy8",
+        description: "Try a sachet of our cucumber face mask to change your 'r&r' to 'R&R!"
+    )
+    PublicClientProduct.create(
+        name: "Honey Wheat Bread",
+        price: 350,
+        image: "https://tinyurl.com/2s388cud",
+        description: "Are you 'bread-y' to handle the awesome bliss of a loaf of our quality honey wheat bread? 'Wheat' like to see you try!"
+    )
+puts "PublicClientProducts seeded 🌱"

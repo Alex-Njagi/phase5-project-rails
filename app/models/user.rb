@@ -29,8 +29,16 @@ class User < ApplicationRecord
     #Ensures that a user can only sign up as a Farming Group Administrator or Public Client
         validates :status, inclusion: { in: ['Farming Group Administrator', 'Public Client'] }
 
+    before_save :set_group_number
+
     #This method is going to be used by other methods to read the user's name in join tables using their id
         def user_name
             self.name
         end
+
+    private
+
+    def set_group_number
+        self.group_number = 0 if status == 'Public Client'
+    end
 end
