@@ -1,6 +1,5 @@
 class PublicClientProductsController < ApplicationController
     before_action :set_public_client_product, only: [:show]
-    skip_before_action :authorized
 
   # GET /public_client_products
   def index
