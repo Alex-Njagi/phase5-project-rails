@@ -22,5 +22,9 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
 
+  resources :public_client_products, only: [:index, :show]
+
+  resources :public_client_product_sales
+
 
 end

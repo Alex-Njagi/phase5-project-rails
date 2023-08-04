@@ -3,9 +3,13 @@ class User < ApplicationRecord
     #This handles practically everything about the password
         has_secure_password
 
-    #This creates the many to many relationship between this model and FarmerProductSale
+    #This creates the many to many relationship between this model and FarmerProducts
         has_many :farmer_product_sales
         has_many :farmer_products, through: :farmer_product_sales
+
+    #This creates the many to many relationship between this model and PublicClientProducts
+        has_many :public_client_product_sales
+        has_many :public_client_products, through: :public_client_product_sales
 
     #This creates the one to many relationship between this model and FarmerProduceSale
         has_many :farmer_produce_sales
@@ -29,8 +33,16 @@ class User < ApplicationRecord
     #Ensures that a user can only sign up as a Farming Group Administrator or Public Client
         validates :status, inclusion: { in: ['Farming Group Administrator', 'Public Client'] }
 
+    before_save :set_group_number
+
     #This method is going to be used by other methods to read the user's name in join tables using their id
         def user_name
             self.name
         end
+
+    private
+
+    def set_group_number
+        self.group_number = 0 if status == 'Public Client'
+    end
 end

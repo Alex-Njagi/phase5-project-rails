@@ -17,7 +17,7 @@ class FarmerProductSale < ApplicationRecord
       self.product_name = farmer_product.product_name
     end
 
-  #This method just looks up the matching user name using the user's id
+  #This method just looks up the product's unit price
     def fill_unit_price
       self.unit_price = farmer_product.product_unit_price
     end
