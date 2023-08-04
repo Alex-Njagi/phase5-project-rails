@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_31_144659) do
+ActiveRecord::Schema.define(version: 2023_08_04_085009) do
 
   create_table "farmer_produce_sales", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -86,6 +86,15 @@ ActiveRecord::Schema.define(version: 2023_07_31_144659) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["farming_land_id"], name: "index_land_operations_on_farming_land_id"
     t.index ["user_id"], name: "index_land_operations_on_user_id"
+  end
+
+  create_table "public_client_products", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price"
+    t.string "image"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
