@@ -3,9 +3,13 @@ class User < ApplicationRecord
     #This handles practically everything about the password
         has_secure_password
 
-    #This creates the many to many relationship between this model and FarmerProductSale
+    #This creates the many to many relationship between this model and FarmerProducts
         has_many :farmer_product_sales
         has_many :farmer_products, through: :farmer_product_sales
+
+    #This creates the many to many relationship between this model and PublicClientProducts
+        has_many :public_client_product_sales
+        has_many :public_client_products, through: :public_client_product_sales
 
     #This creates the one to many relationship between this model and FarmerProduceSale
         has_many :farmer_produce_sales
