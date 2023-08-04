@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_04_085009) do
+ActiveRecord::Schema.define(version: 2023_08_04_102043) do
 
   create_table "farmer_produce_sales", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -88,6 +88,20 @@ ActiveRecord::Schema.define(version: 2023_08_04_085009) do
     t.index ["user_id"], name: "index_land_operations_on_user_id"
   end
 
+  create_table "public_client_product_sales", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "public_client_product_id", null: false
+    t.string "user_name"
+    t.string "product_name"
+    t.integer "quantity"
+    t.decimal "unit_price"
+    t.decimal "total_product_price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["public_client_product_id"], name: "index_public_client_product_sales_on_public_client_product_id"
+    t.index ["user_id"], name: "index_public_client_product_sales_on_user_id"
+  end
+
   create_table "public_client_products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
@@ -116,4 +130,6 @@ ActiveRecord::Schema.define(version: 2023_08_04_085009) do
   add_foreign_key "farming_lands", "users"
   add_foreign_key "land_operations", "farming_lands"
   add_foreign_key "land_operations", "users"
+  add_foreign_key "public_client_product_sales", "public_client_products"
+  add_foreign_key "public_client_product_sales", "users"
 end

@@ -324,3 +324,19 @@ puts "seeding PublicClientProducts... 🌱"
         description: "Are you 'bread-y' to handle the awesome bliss of a loaf of our quality honey wheat bread? 'Wheat' like to see you try!"
     )
 puts "PublicClientProducts seeded 🌱"
+
+
+#Creates 2 different sales for PublicClientProductSales
+    #If seeding for the first time, change the user_id fields to 6 for the first one and 7 for the second one
+puts "seeding PublicClientProductSales... 🌱"
+    PublicClientProductSale.create(
+        user_id: 31,
+        public_client_product_id: 5,
+        quantity: 16
+    )
+    PublicClientProductSale.create(
+        user_id: 32,
+        public_client_product_id: 12,
+        quantity: 3
+    )
+puts "PublicClientProductSales seeded 🌱"

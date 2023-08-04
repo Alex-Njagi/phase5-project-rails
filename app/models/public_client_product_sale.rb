@@ -22,6 +22,6 @@ class PublicClientProductSale < ApplicationRecord
 
   #This method is used to calculate the total price of a product
     def calculate_total_product_price
-      self.total_product_price = quantity * farmer_product.product_unit_price
+      self.total_product_price = quantity * public_client_product.product_unit_price
     end
 end

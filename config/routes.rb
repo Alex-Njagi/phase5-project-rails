@@ -24,5 +24,7 @@ Rails.application.routes.draw do
 
   resources :public_client_products, only: [:index, :show]
 
+  resources :public_client_product_sales
+
 
 end
