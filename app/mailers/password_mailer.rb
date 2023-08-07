@@ -5,9 +5,14 @@ class PasswordMailer < ApplicationMailer
   #
   #   en.password_mailer.reset.subject
   #
-  def reset
-    @greeting = "Hi"
+  # def reset
+  #   @token = params[:user].signed_id(purpose: "password_reset", expires_in: 19.minutes)
+  #   mail to: params[:user].email
+  # end
 
-    mail to: "to@example.org"
+  def reset(user)
+    @token = user.signed_id(purpose: "password_reset", expires_in: 19.minutes)
+    @user = user
+    mail(to: user.email, subject: 'Reset Your Password')
   end
 end
