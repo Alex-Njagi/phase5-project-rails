@@ -8,7 +8,7 @@ class FarmingLand < ApplicationRecord
       has_many :land_operations, dependent: :destroy
 
   #Ensures the name of the user is looked up before saving
-    before_save :get_user, :fill_status
+    before_save :get_user
 
   #Ensures that the status of land can only be "Unoccupied" (which is the default), "Rented", or "Leased"
     validates :status, inclusion: { in: ['Unoccupied', 'Rented', 'Leased'] }
@@ -30,7 +30,7 @@ class FarmingLand < ApplicationRecord
 
     private
     
-    def fill_status
-      self.status = "Unoccupied"
-    end
+    # def fill_status
+    #   self.status = "Unoccupied"
+    # end
 end
