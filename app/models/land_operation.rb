@@ -43,6 +43,6 @@ class LandOperation < ApplicationRecord
                               "Unoccupied"
                             end
 
-      farming_land.update(status: farming_land_status)
+      farming_land.update(status: farming_land_status, owned_by: user_name)
     end
 end
