@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :users do
-    member do
-      put :update_password
-    end
-  end
+  resources :users
 
   resources :farmer_products, only: [:index, :show]
 
@@ -21,6 +17,9 @@ Rails.application.routes.draw do
 
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
+
+  get '/password_reset', to: 'password_reset#new'
+  post '/password_reset', to: 'password_reset#create'
 
   resources :public_client_products, only: [:index, :show]
 
