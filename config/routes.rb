@@ -18,12 +18,12 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
 
-  resources :password_resets, only: [:new, :create, :edit, :update]
+  # resources :password_resets, only: [:new, :create, :edit, :update]
 
-  # get '/password_reset', to: 'password_reset#new'
-  # post '/password_reset', to: 'password_reset#create'
-  # get '/password_reset_edit', to: 'password_reset#edit'
-  # patch '/password_reset_edit', to: 'password_reset#update'
+  get '/password_reset', to: 'password_resets#new'
+  post '/password_reset', to: 'password_resets#create'
+  get '/password_reset_edit', to: 'password_resets#edit'
+  patch '/password_reset_edit', to: 'password_resets#update'
   
 
   resources :public_client_products, only: [:index, :show]
