@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_06_201145) do
+ActiveRecord::Schema.define(version: 2023_08_07_121326) do
 
   create_table "farmer_produce_sales", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2023_08_06_201145) do
     t.string "status", default: "Unoccupied"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "owned_by", default: "Nobody"
     t.index ["user_id"], name: "index_farming_lands_on_user_id"
   end
 
