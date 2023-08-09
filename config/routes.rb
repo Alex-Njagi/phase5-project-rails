@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
 
+  # mpesa payment
+  post "/stkpush", to: "mpesas#stkpush"
+  post "/stkquery", to: "mpesas#stkquery"
+
   resources :public_client_products, only: [:index, :show]
 
   resources :public_client_product_sales
