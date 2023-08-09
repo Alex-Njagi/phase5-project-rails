@@ -330,12 +330,12 @@ puts "PublicClientProducts seeded 🌱"
     #If seeding for the first time, change the user_id fields to 6 for the first one and 7 for the second one
 puts "seeding PublicClientProductSales... 🌱"
     PublicClientProductSale.create(
-        user_id: 31,
+        user_id: 6,
         public_client_product_id: 5,
         quantity: 16
     )
     PublicClientProductSale.create(
-        user_id: 32,
+        user_id: 7,
         public_client_product_id: 12,
         quantity: 3
     )
