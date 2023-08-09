@@ -17,6 +17,9 @@ class User < ApplicationRecord
     #This creates the one to many relationship between this model and FarmerTraining
         has_many :farmer_trainings
 
+    # Stripe 
+        has_many :payments 
+        
     #This creates the one to many relationship between this model and FarmingLands
         #dependent: :destroy makes it so that if a user is deleted, their pieces of land will also be deleted
             has_many :farming_lands, dependent: :destroy
