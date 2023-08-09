@@ -1,6 +1,8 @@
 class MpesasController < ApplicationController
     
     require 'rest-client'
+    skip_before_action :authorized, only: [:stkpush, :stkquery]
+
 
     # stkpush
      def stkpush
@@ -8,7 +10,7 @@ class MpesasController < ApplicationController
         amount = params[:amount]
         url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
         timestamp = "#{Time.now.strftime "%Y%m%d%H%M%S"}"
-        business_short_code = ENV["MPESA_SHORTCODE"]
+        business_short_code = ENV["MPESA_SHORT_CODE"]
         password = Base64.strict_encode64("#{business_short_code}#{ENV["MPESA_PASSKEY"]}#{timestamp}")
         payload = {
         'BusinessShortCode': business_short_code,
@@ -54,7 +56,7 @@ class MpesasController < ApplicationController
     def stkquery
         url = "https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query"
         timestamp = "#{Time.now.strftime "%Y%m%d%H%M%S"}"
-        business_short_code = ENV["MPESA_SHORTCODE"]
+        business_short_code = ENV["MPESA_SHORT_CODE"]
         password = Base64.strict_encode64("#{business_short_code}#{ENV["MPESA_PASSKEY"]}#{timestamp}")
         payload = {
         'BusinessShortCode': business_short_code,
@@ -88,12 +90,12 @@ class MpesasController < ApplicationController
         render json: response
     end
 
-    private
+   private
 
     def generate_access_token_request
         @url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
-        @consumer_key = ENV['9uzR5qEkbuAmTfvaw7tXpln6Baygzy6p']
-        @consumer_secret = ENV['qxdCjZu7tFAeMhVR']
+        @consumer_key = ENV['MPESA_CONSUMER_KEY']
+        @consumer_secret = ENV['MPESA_CONSUMER_SECRET']
         @userpass = Base64::strict_encode64("#{@consumer_key}:#{@consumer_secret}")
         headers = {
             Authorization: "Bearer #{@userpass}"
