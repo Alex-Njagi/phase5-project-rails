@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
 
+  # stripe payment
+  post '/create_payment_intent', to: 'payments#create_payment_intent'
+
   resources :public_client_products, only: [:index, :show]
 
   resources :public_client_product_sales
