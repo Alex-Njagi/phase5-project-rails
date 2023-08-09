@@ -8,11 +8,17 @@ ALEX NJAGI,DENNIS MARANGU, LEWIS MAWIRA , MARK CHEGE , ANITA GALINA.
 RUBY, RAILS.
 
 ## DELIVERABLES
-1. MVC setup.
-2. Create routes.
-3. Create controllers
-4. Seed Data
-5. Create migrations.
+1. Auth
+2. Tests
+3. Multiple has many relationships
+4. Seeds from a complex data set
+5. Custom routes
+6. Custom controller/model methods
+7.Basic database query optimizations
+8.Background jobs for slow actions
+9.Sockets or email integration
+10.One significant refactor
+11.Validation
    
 
 ## DESCRIPTION.
