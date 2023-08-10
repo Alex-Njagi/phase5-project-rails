@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :users do
-    member do
-      put :update_password
-    end
-  end
+  resources :users
 
   resources :farmer_products, only: [:index, :show]
 
