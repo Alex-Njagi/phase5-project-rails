@@ -55,5 +55,15 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  config.action_mailer.default_url_options = { host: "localhost:3000" }
+  config.action_mailer.default_url_options = { host: "http://127.0.0.1:3000" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',     # Your SMTP server's address
+    port: 587,                       # Port for sending emails
+    domain: 'gmail.com',           # Your domain (can be anything, it's used for HELO/EHLO)
+    user_name: '1992anjagi@gmail.com',   # Use the same email address as default 'from' in your ApplicationMailer
+    password: 'ohkxtlzbgewbzdky',       # Your SMTP password or app-specific password
+    authentication: 'plain',         # Authentication type
+    enable_starttls_auto: true       # Use STARTTLS for secure connection
+  }
 end

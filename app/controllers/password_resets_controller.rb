@@ -10,6 +10,6 @@ class PasswordResetsController < ApplicationController
         if @user.present?
             PasswordMailer.with(user: @user).reset.deliver_later
         end
-        # render json: {If an account with this email is found, we have sent an email link.}
+        redirect_to root_path, notice: "If an account with this email is found, we have sent an email link."
     end
 end
