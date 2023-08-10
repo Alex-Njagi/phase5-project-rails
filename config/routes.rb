@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   get "/password/reset", to: "password_resets#new"
   post "/password/reset", to: "password_resets#create"
   get "/password/reset/edit/:token", to: "password_resets#edit"
-  post "/password/reset/edit", to: "password_resets#update"
+  # patch "/reset-password", to: "password_resets#update"
+  post "/reset-password", to: "password_resets#update"
 
   resources :public_client_products, only: [:index, :show]
 
