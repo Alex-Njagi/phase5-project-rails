@@ -26,6 +26,12 @@ Rails.application.routes.draw do
   post "/stkpush", to: "mpesas#stkpush"
   post "/stkquery", to: "mpesas#stkquery"
 
+  get "/password/reset", to: "password_resets#new"
+  post "/password/reset", to: "password_resets#create"
+  get "/password/reset/edit/:token", to: "password_resets#edit"
+  # patch "/reset-password", to: "password_resets#update"
+  post "/reset-password", to: "password_resets#update"
+
   resources :public_client_products, only: [:index, :show]
 
   resources :public_client_product_sales
