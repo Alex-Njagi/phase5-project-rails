@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2023_08_09_120019) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "access_tokens", force: :cascade do |t|
     t.string "token"
     t.datetime "created_at", precision: 6, null: false
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 2023_08_09_120019) do
   end
 
   create_table "farmer_produce_sales", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "produce_name"
     t.decimal "produce_unit_price"
     t.integer "produce_quantity"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 2023_08_09_120019) do
   end
 
   create_table "farmer_product_sales", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "farmer_product_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "farmer_product_id", null: false
     t.integer "quantity"
     t.integer "unit_price"
     t.integer "total_product_price"
@@ -55,7 +58,7 @@ ActiveRecord::Schema.define(version: 2023_08_09_120019) do
   end
 
   create_table "farmer_trainings", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "user_name"
     t.date "training_date"
     t.decimal "registration_fee"
@@ -67,7 +70,7 @@ ActiveRecord::Schema.define(version: 2023_08_09_120019) do
   end
 
   create_table "farming_lands", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "user_name"
     t.string "image"
     t.string "description"
@@ -80,9 +83,9 @@ ActiveRecord::Schema.define(version: 2023_08_09_120019) do
   end
 
   create_table "land_operations", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "user_name"
-    t.integer "farming_land_id", null: false
+    t.bigint "farming_land_id", null: false
     t.decimal "land_size"
     t.string "land_description"
     t.string "type_of_operation"
@@ -106,8 +109,8 @@ ActiveRecord::Schema.define(version: 2023_08_09_120019) do
   end
 
   create_table "public_client_product_sales", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "public_client_product_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "public_client_product_id", null: false
     t.string "user_name"
     t.string "product_name"
     t.integer "quantity"
