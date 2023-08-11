@@ -93,15 +93,15 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  # config.action_mailer.default_url_options = { host: "https://agribix.onrender.com" }
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   address: 'smtp.gmail.com',     # Your SMTP server's address
-  #   port: 587,                       # Port for sending emails
-  #   domain: 'gmail.com',           # Your domain (can be anything, it's used for HELO/EHLO)
-  #   user_name: '1992anjagi@gmail.com',   # Use the same email address as default 'from' in your ApplicationMailer
-  #   password: 'ohkxtlzbgewbzdky',       # Your SMTP password or app-specific password
-  #   authentication: 'plain',         # Authentication type
-  #   enable_starttls_auto: true       # Use STARTTLS for secure connection
-  # }
+  config.action_mailer.default_url_options = { host: "https://agribix.onrender.com" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',     # Your SMTP server's address
+    port: 587,                       # Port for sending emails
+    domain: 'gmail.com',           # Your domain (can be anything, it's used for HELO/EHLO)
+    user_name: '1992anjagi@gmail.com',   # Use the same email address as default 'from' in your ApplicationMailer
+    password: 'ohkxtlzbgewbzdky',       # Your SMTP password or app-specific password
+    authentication: 'plain',         # Authentication type
+    enable_starttls_auto: true       # Use STARTTLS for secure connection
+  }
 end
